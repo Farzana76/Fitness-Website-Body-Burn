@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import CoachDetail from '../CoachDetail/CoachDetail';
+import './Coaches.css';
 
 const Coaches = () => {
     const [coaches, setCoaches] = useState([]);

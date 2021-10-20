@@ -8,8 +8,8 @@ const Register = () => {
    
     return (
 
-        <div className="w-25 m-auto p-3 mt-3 border rounded mb-3">
-            <h2 className="text-primary mb-3">Please, Register</h2>
+        <div className="w-50 m-auto p-3 mt-3 border rounded mb-3">
+            <h1 className="text-secondary mb-3 heading">Please Register</h1>
             <div className="text-danger" style={{ height: "50px" }}>
                 {error}
             </div>
@@ -40,7 +40,7 @@ const Register = () => {
                 />
                 <input
                 onClick={userRegistration}
-                className="btn btn-primary text-light"
+                className="btn btn-primary text-light heading btn-lg"
                 type="submit"
                 value="Register"
                 />

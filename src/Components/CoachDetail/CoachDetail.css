@@ -1,6 +1,7 @@
 .coach{
     box-shadow: 5px 5px 10px rgb(0, 0, 0);
     transition: transform .3s;
+    overflow: hidden;
 }
 .coach:hover{
     transform: scale(0.95);

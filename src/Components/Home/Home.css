@@ -6,7 +6,7 @@
 }
 .healthy-foods{
     background-image: url(../../img/healthy.jpg);
-    background-repeat: no-repeat;
+    background-repeat: no-repeat cover;
     margin-left: -8px;
     margin-right: -8px;
     padding: 20px;

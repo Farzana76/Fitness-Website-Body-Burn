@@ -77,7 +77,7 @@ const useFirebase = () => {
             const user = result.user;
             console.log(user);
             verifyEmail();
-            setError("");
+            setError('');
         })
         .catch((error) => {
             setError(error.message);

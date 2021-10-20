@@ -59,7 +59,7 @@ const Home = () => {
                     A vast number of foods are both healthy and tasty. By filling your plate with fruits, vegetables, quality protein, and other whole foods, you’ll have meals that are colorful, versatile, and good for you.
                 </h5>
             </div>
-            <section className="healthy-foods">
+            <section className="healthy-foods img-fluid mx-auto">
                 <div className="healthy-flex-display">
                     <div className="half-width healthy-section">
                         <h3>Fruits and berries</h3>

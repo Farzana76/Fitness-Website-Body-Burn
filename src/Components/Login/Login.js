@@ -20,8 +20,8 @@ const Login = () => {
 
     return (
 
-        <div className="w-25 m-auto p-3 mt-3 border rounded mb-3">
-            <h2 className="text-primary mb-3">Please, Log in</h2>
+        <div className="w-50 m-auto p-3 mt-3 border rounded mb-3">
+            <h1 className="text-secondary mb-3 heading">Please Log in</h1>
             <div className="text-danger" style={{ height: "50px" }}>
                 {error}
             </div>
@@ -44,13 +44,13 @@ const Login = () => {
                 />
                 <input
                 onClick={signInWithEmail}
-                className="btn btn-primary mb-3"
+                className="btn btn-primary mb-3 heading btn-lg"
                 type="submit"
                 value="Login"
                 />
             </form>
             <p>Or</p>
-            <button onClick={handleGoogleLogin} className="btn btn-success me-2">
+            <button onClick={handleGoogleLogin} className="btn btn-success me-2 heading">
                 Sign in with Google
             </button>
             <p className="mt-3">
