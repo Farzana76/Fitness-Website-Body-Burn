@@ -2,10 +2,11 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import logo from "../../img/logo.png";
+import useAuth from '../../hooks/useAuth';
 import './Menu.css';
-// import ScrollAnimation from 'react-animate-on-scroll';
 
 const Menu = () => {
+    const { user, logOut } = useAuth();
     return (
         <Navbar bg="dark" expand="lg" variant="dark">
             <Container>
@@ -27,9 +28,12 @@ const Menu = () => {
                     <NavLink to="/register" className="items">
                     <li>Register</li>
                     </NavLink>
-                    <NavLink to="/login" className="items">
-                    <li>Login</li>
-                    </NavLink>
+                    {user.email && <span style={{ color: 'white' }}>Welcome, {user.displayName} </span>}
+                    {
+                    user.email ?
+                        <button onClick={logOut}>log out</button>
+                        :
+                        <NavLink to="/login">Login</NavLink>}
                 </Nav>
                 </Navbar.Collapse>
             </Container>
