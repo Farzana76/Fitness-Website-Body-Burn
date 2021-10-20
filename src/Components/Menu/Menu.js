@@ -1,12 +1,15 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, Spinner } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import logo from "../../img/logo.png";
 import useAuth from '../../hooks/useAuth';
 import './Menu.css';
 
 const Menu = () => {
-    const { user, logOut } = useAuth();
+    const { user, logOut, loading } = useAuth();
+    if (loading) {
+        return <Spinner animation="border" />
+    }
     return (
         <Navbar bg="dark" expand="lg" variant="dark">
             <Container>
@@ -28,12 +31,12 @@ const Menu = () => {
                     <NavLink to="/register" className="items">
                     <li>Register</li>
                     </NavLink>
-                    {user.email && <span style={{ color: 'white' }}>Welcome, {user.displayName} </span>}
+                    {user.email && <span className="item1 text-muted">Logged in {user.displayName} </span>}
                     {
                     user.email ?
-                        <button onClick={logOut}>log out</button>
+                        <button onClick={logOut} className="btn btn-outline-light">Log out</button>
                         :
-                        <NavLink to="/login">Login</NavLink>}
+                        <NavLink to="/login" className="items">Login</NavLink>}
                 </Nav>
                 </Navbar.Collapse>
             </Container>

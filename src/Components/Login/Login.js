@@ -4,7 +4,8 @@ import useAuth from '../../hooks/useAuth';
 import './Login.css';
 
 const Login = () => {
-    const { signInUsingGoogle } = useAuth();
+    const { signInUsingGoogle, signInWithEmail, userEmail, userPassword, error } = useAuth();
+
     const location = useLocation();
     const history = useHistory();
     const redirect_url = location.state?.from || '/home';
@@ -16,24 +17,45 @@ const Login = () => {
                 history.push(redirect_url);
             })
     }
+
     return (
-        <div className="login-form">
-            <div>
-                <h2>Login</h2>
-                <form>
-                    <input type="email" name="" id="" placeholder="Your Email" />
-                    <br />
-                    <input type="password" name="" id="" />
-                    <br />
-                    <input type="submit" value="Submit" />
-                </form>
-                <p>new to ema-john website? <Link to="/register">Create Account</Link></p>
-                <div>-------or----------</div>
-                <button
-                    className="btn-regular"
-                    onClick={handleGoogleLogin}
-                >Google Sign In</button>
+
+        <div className="w-25 m-auto p-3 mt-3 border rounded mb-3">
+            <h2 className="text-primary mb-3">Please, Log in</h2>
+            <div className="text-danger" style={{ height: "50px" }}>
+                {error}
             </div>
+            <form>
+                <input
+                onChange={userEmail}
+                className="form-control mb-3"
+                type="email"
+                name=""
+                id=""
+                placeholder="E-mail"
+                />
+                <input
+                onChange={userPassword}
+                className="form-control mb-3"
+                type="password"
+                name=""
+                id=""
+                placeholder="Password"
+                />
+                <input
+                onClick={signInWithEmail}
+                className="btn btn-primary mb-3"
+                type="submit"
+                value="Login"
+                />
+            </form>
+            <p>Or</p>
+            <button onClick={handleGoogleLogin} className="btn btn-success me-2">
+                Sign in with Google
+            </button>
+            <p className="mt-3">
+                New user? <Link to="/register">Register here</Link>
+            </p>
         </div>
     );
 };
