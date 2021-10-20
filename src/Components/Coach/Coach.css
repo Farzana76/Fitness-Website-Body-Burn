@@ -1,0 +1,13 @@
+.image{
+    transition: transform .3s;
+}
+.image:hover{
+    transform: scale(1.1);
+}
+.button{
+    transition: transform .3s;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.button:hover{
+    transform: scale(1.1);
+}

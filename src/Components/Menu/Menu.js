@@ -22,7 +22,7 @@ const Menu = () => {
                     <NavLink to="/home" className="items">
                     <li>Home</li>
                     </NavLink>
-                    <NavLink to="/coaches" className="items">
+                    <NavLink to="/coachdetail" className="items">
                     <li>Coaches</li>
                     </NavLink>
                     <NavLink to="/recipes" className="items">

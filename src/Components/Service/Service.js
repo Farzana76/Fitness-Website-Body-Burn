@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './Service.css';
 
 const Service = (props) => {
     const {id, title, time, schedule, type, img} = props.service;
-
     const history = useHistory();
+    
     const handleDetails = () => {
         history.push(`/service/${id}`);
     }

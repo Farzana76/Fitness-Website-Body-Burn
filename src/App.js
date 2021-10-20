@@ -9,6 +9,8 @@ import Login from './Components/Login/Login';
 import NotFound from './Components/NotFound/NotFound';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Coaches from './Components/Coaches/Coaches';
+import Recipes from './Components/Recipes/Recipes';
 
 function App() {
   return (
@@ -26,6 +28,12 @@ function App() {
             <PrivateRoute path="/service/:sid">
               <ServiceDetail></ServiceDetail>
             </PrivateRoute>
+            <PrivateRoute path="/coachdetail">
+              <Coaches></Coaches>
+            </PrivateRoute>
+            <Route path="/recipes">
+              <Recipes></Recipes>
+            </Route>
             <Route path="/register">
               <Register></Register>
             </Route>
